@@ -34,14 +34,25 @@ export function Sphere({ position }) {
 		}
 	}
 
+	function puntSphere() {
+		if (!sphereRef.current) return;
+
+		const impulse = {
+			x: 0, // Try increasing if it's not enough
+			y: 50, // Give it more lift so it's noticeable
+			z: -50000,
+		};
+		sphereRef.current.applyImpulse(impulse, true);
+	}
+
 	return (
 		<RigidBody
 			ref={sphereRef}
 			position={position}
-			linearDamping={0.9}
-			angularDamping={0.9}
+			linearDamping={0.5}
+			angularDamping={0.5}
 		>
-			<mesh castShadow onPointerMove={moveSphere}>
+			<mesh castShadow onPointerMove={moveSphere} onClick={puntSphere}>
 				<icosahedronGeometry args={[2.5, 4]} />
 				<meshStandardMaterial color="orange" />
 			</mesh>
