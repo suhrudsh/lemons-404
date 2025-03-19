@@ -45,6 +45,8 @@ export function Sphere({ position }) {
 		sphereRef.current.applyImpulse(impulse, true);
 	}
 
+	const color = [Math.random(), Math.random(), Math.random()];
+
 	return (
 		<RigidBody
 			ref={sphereRef}
@@ -54,7 +56,12 @@ export function Sphere({ position }) {
 		>
 			<mesh castShadow onPointerMove={moveSphere} onClick={puntSphere}>
 				<icosahedronGeometry args={[2.5, 4]} />
-				<meshStandardMaterial color="orange" />
+				<meshStandardMaterial
+					color={color}
+					emissive={color}
+					emissiveIntensity={0.5}
+					roughness={0.4}
+				/>
 			</mesh>
 		</RigidBody>
 	);
