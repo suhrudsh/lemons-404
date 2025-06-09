@@ -74,7 +74,7 @@ function Lights({ isMobile }) {
 
       <SpotLightWithHelper
         position={isMobile ? [16.096, 20.616, 6.848] : [24.144, 30.924, 10.272]}
-        intensity={isMobile ? 400 : 2000}
+        intensity={isMobile ? 600 : 2000}
         penumbra={isMobile ? 0.5 : 0.8}
         color="white"
         targetPosition={target}
@@ -82,7 +82,7 @@ function Lights({ isMobile }) {
 
       <SpotLightWithHelper
         position={isMobile ? [-9.96, 7.316, 11.608] : [-14.94, 10.974, 17.412]}
-        intensity={isMobile ? 200 : 1000}
+        intensity={isMobile ? 300 : 1000}
         penumbra={isMobile ? 0.5 : 0.8}
         color="white"
         targetPosition={target}
@@ -92,19 +92,10 @@ function Lights({ isMobile }) {
         position={
           isMobile ? [-9.66, 10.064, -10.032] : [-14.49, 15.096, -15.048]
         }
-        intensity={isMobile ? 200 : 1000}
+        intensity={isMobile ? 300 : 1000}
         penumbra={isMobile ? 0.5 : 0.8}
         color="white"
         targetPosition={target}
-      />
-
-      <pointLight
-        position={
-          isMobile ? [-11.18, 10.62, -11.788] : [-16.77, 15.93, -17.682]
-        }
-        intensity={isMobile ? 300 : 1500}
-        color={new THREE.Color(1.0, 0.657, 0.127)}
-        castShadow
       />
     </>
   );
