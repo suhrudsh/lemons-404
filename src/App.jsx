@@ -111,7 +111,7 @@ export default function App() {
     <div className="relative h-dvh w-screen touch-none bg-black">
       <img
         className="absolute inset-0 h-full w-full object-cover"
-        src={import.meta.env.BASE_URL + "BG.png"}
+        src={import.meta.env.BASE_URL + "BG.webp"}
         alt=""
       />
 
