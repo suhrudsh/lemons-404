@@ -108,20 +108,26 @@ function Lights() {
 
 export default function App() {
   return (
-    <div className="relative h-dvh w-screen touch-none bg-black">
+    <div className="relative h-dvh w-screen touch-none overflow-hidden bg-black">
       <img
         className="absolute inset-0 h-full w-full object-cover"
         src={import.meta.env.BASE_URL + "BG.webp"}
         alt=""
       />
 
-      <div className="absolute inset-0 px-32">
-        <h1 className="font-shoulders text-lemon flex flex-col gap-0 text-[14rem] leading-none font-black">
+      <div className="absolute inset-0 flex justify-between px-32">
+        <h1 className="font-shoulders text-lemon flex flex-col justify-between gap-0 text-[14rem] leading-none font-black">
           <span>LIFE</span>
           <span>GAVE</span>
           <span className="font-shoulders-inline">YOU</span>
           <span>LEMONS.</span>
         </h1>
+        <a
+          href="/"
+          className="font-shoulders bg-lemon hover:text-lemon z-10 mb-4 self-end px-4 py-2 text-4xl font-bold text-white transition-colors hover:bg-transparent"
+        >
+          Go back home
+        </a>
       </div>
 
       <Canvas
