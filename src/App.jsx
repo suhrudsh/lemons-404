@@ -111,10 +111,10 @@ function Lights({ isMobile }) {
 }
 
 export default function App() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
 
   useEffect(() => {
-    const onResize = () => setIsMobile(window.innerWidth < 640);
+    const onResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
@@ -127,21 +127,21 @@ export default function App() {
         alt=""
       />
 
-      <div className="absolute bottom-0 flex flex-col justify-between gap-8 px-4 lg:inset-0 lg:flex-row lg:gap-0 lg:px-32">
+      <div className="absolute bottom-0 flex flex-col justify-between gap-8 px-4 md:px-12 lg:inset-0 lg:flex-row lg:gap-0 lg:px-32">
         <div className="lg:py-8">
-          <h1 className="font-shoulders text-lemon flex flex-col justify-between gap-0 text-8xl leading-none font-black lg:text-[10rem] xl:text-[13rem]">
+          <h1 className="font-shoulders text-lemon flex flex-col justify-between gap-0 text-8xl leading-none font-black md:text-[9rem] lg:text-[10rem] xl:text-[13rem]">
             <span>LIFE</span>
             <span>GAVE</span>
             <span className="font-shoulders-inline">YOU</span>
             <span>LEMONS.</span>
           </h1>
-          <p className="font-shoulders text-lemon text-xl font-bold lg:text-2xl xl:text-3xl">
+          <p className="font-shoulders text-lemon text-xl font-bold md:text-2xl xl:text-3xl">
             (This page does not exist.)
           </p>
         </div>
         <a
           href="/"
-          className="font-shoulders bg-lemon hover:text-lemon z-10 mb-4 self-start px-4 py-2 text-2xl font-bold text-white transition-colors hover:bg-transparent lg:mb-25 lg:self-end lg:text-3xl xl:mb-20 xl:text-4xl"
+          className="font-shoulders bg-lemon hover:text-lemon z-10 mb-4 self-start px-4 py-2 text-2xl font-bold text-white transition-colors hover:bg-transparent md:mb-12 md:text-3xl lg:mb-25 lg:self-end xl:mb-20 xl:text-4xl"
         >
           Go back home
         </a>
@@ -153,7 +153,7 @@ export default function App() {
           position: [20.18, 20.36, 18.756],
           fov: 50,
         }}
-        className="translate-x-1/5"
+        className="translate-x-1/5 md:translate-x-1/12 lg:translate-x-1/5"
         style={{ width: isMobile ? "120vw" : "100%" }}
       >
         <SetCameraTarget />
