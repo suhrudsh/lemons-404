@@ -1,0 +1,24 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders&family=Big+Shoulders+Inline&display=swap"); */
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Big Shoulders";
+  src: url("/BigShoulders-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Big Shoulders Inline";
+  src: url("/BigShouldersInline-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-shoulders: "Big Shoulders", sans-serif;
+  --font-shoulders-inline: "Big Shoulders Inline", sans-serif;
+  --color-lemon: #e5e284;
+}
