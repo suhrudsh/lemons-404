@@ -5,12 +5,19 @@ import { Lemon } from "./Lemon";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
+const CAMERA_SHIFT_X = -8;
+const CAMERA_SHIFT_X_MOBILE = -5;
+
 // Set camera target
-function SetCameraTarget() {
+function SetCameraTarget({ isMobile }) {
   const { camera } = useThree();
   useEffect(() => {
-    camera.lookAt(-9.05, 9.54, -8.41);
-  }, [camera]);
+    camera.lookAt(
+      -9.05 + isMobile ? CAMERA_SHIFT_X_MOBILE : CAMERA_SHIFT_X,
+      9.54,
+      -8.41,
+    );
+  }, [camera, isMobile]);
   return null;
 }
 
@@ -141,13 +148,15 @@ export default function App() {
       <Canvas
         shadows="soft"
         camera={{
-          position: [20.18, 20.36, 18.756],
-          fov: 50,
+          position: [
+            20.18 + isMobile ? CAMERA_SHIFT_X_MOBILE : CAMERA_SHIFT_X,
+            20.36,
+            18.756,
+          ],
+          fov: isMobile ? 70 : 65,
         }}
-        className="translate-x-1/5 md:translate-x-1/12 lg:translate-x-1/5"
-        style={{ width: isMobile ? "120vw" : "100%" }}
       >
-        <SetCameraTarget />
+        <SetCameraTarget isMobile />
         <Lights isMobile={isMobile} />
 
         <Physics gravity={[0, 0, 0]}>
