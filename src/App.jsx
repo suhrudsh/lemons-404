@@ -127,7 +127,7 @@ export default function App() {
 
       <div className="absolute bottom-0 flex flex-col justify-between gap-8 px-4 md:px-12 lg:inset-0 lg:flex-row lg:gap-0 lg:px-32">
         <div className="lg:py-8">
-          <h1 className="font-shoulders text-lemon flex flex-col justify-between gap-0 text-8xl leading-none font-black md:text-[9rem] lg:text-[10rem] xl:text-[13rem]">
+          <h1 className="font-shoulders text-lemon flex flex-col justify-between gap-0 text-8xl leading-none font-black md:text-[9rem] lg:text-[10rem] xl:text-[11rem] 2xl:text-[13rem]">
             <span>LIFE</span>
             <span>GAVE</span>
             <span className="font-shoulders-inline">YOU</span>
